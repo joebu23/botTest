@@ -1,6 +1,7 @@
-var SlackBot = require('slackbots')
-var Phrases = require('./phrases')
-var Sender = require('./sender')
+var SlackBot = require('slackbots');
+var Wit = require('node-wit');
+var Phrases = require('./phrases');
+var Sender = require('./sender');
 
 // create the bot
 var bot = new SlackBot({
