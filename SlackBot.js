@@ -1,27 +1,27 @@
 var SlackBot = require('slackbots')
 var Phrases = require('./phrases')
+var Sender = require('./sender')
 
 // create the bot
 var bot = new SlackBot({
-	token: '',
-	name: 'Family-Bot'
+	token: 'xoxb-33229263413-VxiQQNKGnr9zq6PESQNCohbO',
+	name: 'good-cop'
 });
 
+var params;
+
 bot.on('start', function() {
-	var params = {
+    params = {
 		icon_emoji: ':poop:'
 	};
 });
 
 bot.on('message', function(data) {
-	if(data.type == "message" && data.username != "Family-Bot")
+    console.log(data);
+	console.log('----------');
+           
+	if(Sender.should_I_answer(data))
 	{
-		if(data.text.split(':')[0] == "<@U0Z0^UTRV>")
-		{
-			bot.postMessageToChannel('family-stuff', "You never talk right to me", params);
-		}
-		console.log(data);
-		console.log('----------');
-		bot.postMessageToChannel('family-stuff', Phrases.getPhrase(), params);
+		bot.postMessageToChannel('bot-testing', Phrases.getPhrase(), params);
 	}
 });
