@@ -3,8 +3,13 @@ var Phrases = require('./phrases')
 
 // create the bot
 var bot = new SlackBot({
-	token: 'xoxb-33006979879-CNgRf5icgwZVf8PcKz1GP7Vy',
+<<<<<<< HEAD
+	token: '',
 	name: 'Family-Bot'
+=======
+	token: '',
+	name: 'Jim The Bot'
+>>>>>>> 0730e8ebfb804b4610824beac807b47d1298cd50
 });
 
 bot.on('start', function() {
