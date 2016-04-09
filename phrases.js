@@ -34,5 +34,13 @@ module.exports = {
 
   var number = Math.floor((Math.random() * 29) + 1);
   return phrases[number];
+  },
+  
+  getResponse: function(deciphered) {
+      if(deciphered.question && deciphered.movie_related) {
+          return "movie question";
+      } else {
+          return "I have no idea what you're talking about";
+      }
   }
 }
